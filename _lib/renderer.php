@@ -1,6 +1,6 @@
 <?php
-  /* has always config included
-  //require_once(realpath(dirname(__FILE__) . "/../config/config.php"));
+  /* has always config included */
+  require_once(LIB_PATH . "funcs.php");
   
 
   /**
@@ -32,7 +32,7 @@
   
   
   function render_index() {
-    
+    print_r(get_list_of_articles());
   }
   
 ?>

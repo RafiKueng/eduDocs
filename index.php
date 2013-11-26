@@ -9,9 +9,6 @@
     die();
   }
   
-  echo PAGES_PATH . $_GET["a"];
-  
-
   if (isset($_GET["a"])) {
     if (is_dir(PAGES_PATH . $_GET["a"])) {
       render_page($_GET['a']);
