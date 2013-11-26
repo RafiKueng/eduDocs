@@ -1,9 +1,0 @@
-=Setup of GIT and Github=
-
-This describes how to setup and use git, github ect
-
-[install_git]
-[get_github_account]
-[setup_git]
-
-[use_git]
