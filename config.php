@@ -56,13 +56,12 @@ $config = array(
     Creating constants for heavily used paths makes things a lot easier. 
     ex. require_once(LIBRARY_PATH . "Paginator.php") 
 */  
-/*
-defined("LIBRARY_PATH")  
-    or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));  
+
+defined("LIB_PATH")  
+    or define("LIB_PATH", realpath(dirname(__FILE__)));  
       
-defined("TEMPLATES_PATH")  
-    or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));  
-*/
+defined("PAGES_PATH")  
+    or define("PAGES_PATH", realpath(dirname(__FILE__) . '../_pages'));  
 
 
   
