@@ -547,8 +547,15 @@ FileETag None
 # ====== MY STUFF =========================
 
 # route all url requests to redirector.php
+#<IfModule mod_rewrite.c>
+#  RewriteEngine on
+#  RewriteBase /tutos/
+#  RewriteRule ^article/(.*)$ redirector.php?f=$1 [NC,L]
+#</IfModule>
 <IfModule mod_rewrite.c>
   RewriteEngine on
-  RewriteBase /tutos/
-  RewriteRule ^article/(.*)$ redirector.php?f=$1 [NC,L]
+  RewriteBase /page/tutos/
+#  RewriteRule ^article/(.*)$ index.php?a=$1 [NC,L]
+  RewriteRule ^([A-Za-z0-9]*)/(.*)$ index.php?a=$1&c=$2 [NC,L]
+  RewriteRule ^(_.*)$ index.php?e=$1 [NC,L]
 </IfModule>

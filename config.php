@@ -8,15 +8,13 @@
     you'll only need to update it here. 
 */  
 
-echo "config.php called<br>";
+#echo "config.php called<br>";
 
 
 $config = array(
-  "paths" => array(
-    "ext"         => ".txt",
-    "articles"    => realpath(dirname(__FILE__) . "/../docs/article/"),
-    "lib"         => realpath(dirname(__FILE__) . "/../lib/")
-  )
+  "pagefile"  => "html.php",
+  "pageconf" => "conf.php",
+  "pagecss" => "css.php"
 /*
     "db" => array(  
         "db1" => array(  
@@ -58,10 +56,10 @@ $config = array(
 */  
 
 defined("LIB_PATH")  
-    or define("LIB_PATH", realpath(dirname(__FILE__)));  
+    or define("LIB_PATH", realpath(dirname(__FILE__) . '/_lib' ) . '/');  
       
 defined("PAGES_PATH")  
-    or define("PAGES_PATH", realpath(dirname(__FILE__) . '../_pages'));  
+    or define("PAGES_PATH", realpath(dirname(__FILE__) . '/_pages') . '/');  
 
 
   
@@ -71,7 +69,7 @@ defined("PAGES_PATH")
 ini_set("error_reporting", "true");  
 error_reporting(E_ALL|E_STRCT);
 
-var_dump($config);
-echo "<br>end of config.php<br>"
+#var_dump($config);
+#echo "<br>end of config.php<br>"
 
 ?>  

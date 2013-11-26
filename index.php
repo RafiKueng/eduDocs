@@ -1,12 +1,22 @@
 <?php
-  require_once(realpath(dirname(__FILE__) . "/_lib/config.php"));
+  require_once(realpath(dirname(__FILE__) . "/config.php"));
   require_once(LIB_PATH . "renderer.php");
+  
+  #var_dump($_GET);
+  
+  if (isset($_GET["e"])) {
+    echo 'dont hack me';
+    die();
+  }
+  
+  echo PAGES_PATH . $_GET["a"];
+  
 
   if (isset($_GET["a"])) {
-    if (is_dir(PAGES_PATH . $_GET["f"])) {
+    if (is_dir(PAGES_PATH . $_GET["a"])) {
       render_page($_GET['a']);
     }
-    else if (is_file(PAGES_PATH . $_GET["f"])) {
+    else if (is_file(PAGES_PATH . $_GET["a"])) {
     }
     else {
       render_pagenotfound($_GET["a"]);
