@@ -1,17 +1,13 @@
 <?php
+  require_once(realpath(dirname(__FILE__) . "/../config/config.php"));
+  require_once(realpath(dirname(__FILE__) . "/../lib/templates.php"));
+
   function getDayOfWeek() {
     return date('l');
   }
+  
+echo getHeader('myTitle');
+
+echo getFooter();
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Title of the document</title>
-  </head>
-  <body>
-    <?php
-      echo '<p>Today is: ' . getDayOfWeek() . "</p>\n";
-    ?>
-  </body>
-</html>
