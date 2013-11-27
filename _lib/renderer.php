@@ -23,9 +23,11 @@
   
   
   function render_pagenotfound($p) {
-    header('HTTP/1.0 404 Not Found');
-    echo "<h1>404 Not Found</h1>";
-    echo "The page that you have requested ($p) could not be found.";
+    header("HTTP/1.0 404 Not Found");
+    include_once("404.php");
+    #header('HTTP/1.0 404 Not Found');
+    #echo "<h1>404 Not Found</h1>";
+    #echo "The page that you have requested ($p) could not be found.";
     exit();
   }
   
