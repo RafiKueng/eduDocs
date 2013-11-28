@@ -26,6 +26,15 @@ host = 'physik'
 srcpath = p.abspath('.')
 dest = p.abspath('../docs-live/')
 
+if p.exists(dest):
+  print "path [%s] exists.\neverything will be deleted and recopied\npress anykey to continue, ctrl+c to cancel" % dest
+  raw_input()
+  shutil.rmtree(dest)
+
+os.makedirs(dest)  
+  
+  
+
 for f in srcfiles:
   print 'copying:', (p.join(srcpath,f),p.join(dest,f)),
   if p.isdir(p.join(srcpath,f)):
