@@ -16,6 +16,7 @@
     else if (is_file(PAGES_PATH . $_GET["a"])) {
     }
     else {
+      echo 'page not found in index.php';
       render_pagenotfound($_GET["a"]);
     }
   }

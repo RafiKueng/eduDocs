@@ -84,12 +84,13 @@
                 <li>an out-of-date link</li>
             </ul>
             <p>You tried to get:<br><span><?php echo $_SERVER["REQUEST_URI"] ?></span></p>
-            <!--
-            <script>
-                var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-            </script>
-            <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
-            -->
+<?php
+  if (isset($_GET) and count($_GET)>0){
+    echo '<code>';
+    print_r($_GET);
+    echo '</code>';
+  }
+?>            
         </div>
     </body>
 </html>

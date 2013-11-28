@@ -558,8 +558,13 @@ FileETag None
 #  RewriteRule ^article/(.*)$ index.php?a=$1 [NC,L]
 #  RewriteRule ^([A-Za-z0-9]*)/img/(.*)$ _pages/$1/img/$2 [NC,L]
 #  RewriteRule ^([A-Za-z0-9]*)/([A-Za-z0-9]*)/(.*)$ ressources.php?page=$1&type=$2&name=$3 [NC,L]
-  RewriteRule ^([A-Za-z0-9]*)/([A-Za-z0-9]*)/(.*)$ _pages/$1/$2/$3 [NC,L]
 
-  RewriteRule ^([A-Za-z0-9]*)/([a-zA-Z]*)$ index.php?a=$1&c=$2 [NC,L]
+#redirect ressources for pages
+  RewriteRule ^([A-Za-z0-9][\w\-]*)/(img|pdf|css|js)/(\w+\.\w+)$ _pages/$1/$2/$3 [NC,L]
+
+#redirect page/article requests
+  RewriteRule ^([A-Za-z0-9][\w\-]*)$ $1/ [R,L,QSA]  # forgott trailling / ? -> redirect 
+  RewriteRule ^([A-Za-z0-9][\w\-]*)/?(([\w\-]+/?)*)$ index.php?a=$1&c=$2 [NC,L,QSA]
+
 #  RewriteRule ^(_.*)$ index.php?e=$1 [NC,L]
 </IfModule>

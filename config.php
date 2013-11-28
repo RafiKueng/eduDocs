@@ -61,6 +61,11 @@ defined("LIB_PATH")
 defined("PAGES_PATH")  
     or define("PAGES_PATH", realpath(dirname(__FILE__) . '/_pages') . '/');  
 
+defined("TEMPL_PATH")  
+    or define("TEMPL_PATH", realpath(dirname(__FILE__) . '/_templates') . '/');  
+
+defined("BASEPATH")  
+    or define("BASEPATH", '/page/tutos');  
 
   
 /* 

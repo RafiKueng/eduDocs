@@ -156,7 +156,6 @@ h2 {
 h3, h4 {
   display: inline-block;
   float: left;
-  width: 180px;
   margin: 0;
   padding: 0;
 
@@ -165,7 +164,12 @@ h3, h4 {
   margin: 0;
 }
 
+h3 {
+  width: 190px;
+}
+
 h4 {
+  width: 175px;
   padding-left: 20px;
 }
 
@@ -185,6 +189,7 @@ h4:before {
 .topicbox > p,
 .topicbox > ul,
 .topicbox > ol {
+  /*min-width: 300px;*/
   margin: 0px 0px 0px 220px;
   padding: 1em 5px 0.5em 5px;
   border-left: 1px solid gray;
@@ -405,8 +410,44 @@ img.small {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (max-width: 600px) {
+  /* Style adjustments for viewports that meet the condition */
+  * {
+      background: #ffd !important;
+  }
+
+  /*.topictext {*/
+  .topicbox > div,
+  .topicbox > p,
+  .topicbox > ul,
+  .topicbox > ol {
+    min-width: 300px;
+    margin: 0px 0px 0px 5px;
+  }
+
+  h3, h4 {
+    display: block;
+    float: none;
+    min-width: 300px;
+    margin: 0px 0px 0px 5px;
+    border-left: 1px solid gray;
+  }
+  
+  h4 {
+    padding-left: 0;
+  }
+  
+  .topic {
+    margin: 0;
+    padding: 5px;
+    /*background-color: #ffa;*/
+  }
+
+  body {
+    width: none;
+    margin: 0px;
+    padding: 5px;
+  } 
 }
 
 @media print,

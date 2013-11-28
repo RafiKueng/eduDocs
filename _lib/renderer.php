@@ -1,5 +1,6 @@
 <?php
   /* has always config included */
+  require_once(realpath(dirname(__FILE__) . "/../config.php"));
   require_once(LIB_PATH . "funcs.php");
   
 
@@ -17,14 +18,20 @@
     foreach($file as $line){
       
     }
-    print_r($file);
+    #print_r($file);
+    
+    require_once(TEMPL_PATH . "header.php");
+    #echo 'blabla';
+    #print_r($file);
+    require_once(PAGES_PATH . '/' . $f . '/' . $config["pagefile"]);
+    require_once(TEMPL_PATH . "footer.php");
 
   }
   
   
   function render_pagenotfound($p) {
     header("HTTP/1.0 404 Not Found");
-    include_once("404.php");
+    require_once("404.php");
     #header('HTTP/1.0 404 Not Found');
     #echo "<h1>404 Not Found</h1>";
     #echo "The page that you have requested ($p) could not be found.";
@@ -34,7 +41,11 @@
   
   
   function render_index() {
-    print_r(get_list_of_articles());
+    $list = get_list_of_articles();
+    #print_r($list);
+    require_once(TEMPL_PATH . "index.php");
   }
   
+  #render_index();
+  #render_page('gitlatex');
 ?>

@@ -69,7 +69,7 @@ fn.createTOC = function() {
 
 fn.clean = function(s){
   return s.replace(/[_\s]/g, '-').replace(/[^a-z0-9-\s]/gi, '');
-}
+};
 
 
 $( document ).ready(function() {
@@ -84,7 +84,7 @@ $( document ).ready(function() {
     else {type = '';}
     
     $(this)
-      .click(function(evt){fn.showgoto(this.id)})
+      .click(function(evt){fn.showgoto(this.id);})
       .addClass(type) //this colors the links acccording to target
       ;
   });
@@ -96,8 +96,8 @@ $( document ).ready(function() {
         $(this).parent().hasClass('adv') ||
         $(this).parent().hasClass('exp') ){
       $(this).parent().slideUp();
-    } 
-  })
+    }
+  });
   
   
   $('div.video').each(function(){
@@ -109,7 +109,7 @@ $( document ).ready(function() {
     $(this).append($tbox);
     $(this).hide(); //hinde until its implemented
     */
-  })
+  });
 
 });
 
