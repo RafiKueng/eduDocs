@@ -24,7 +24,7 @@ hostfiles = [
 
 host = 'physik'
 srcpath = p.abspath('.')
-dest = p.abspath('./bla/')
+dest = p.abspath('../docs-live/')
 
 for f in srcfiles:
   print 'copying:', (p.join(srcpath,f),p.join(dest,f)),
