@@ -17,7 +17,7 @@ defined("TEMPL_PATH")
     or define("TEMPL_PATH", realpath(dirname(__FILE__) . '/_templates') . '/');  
 
 defined("BASEPATH")  
-    or define("BASEPATH", '/~rafik/');  
+    or define("BASEPATH", '/~rafik/docs');  
 
   
 /* 

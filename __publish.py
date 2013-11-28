@@ -1,7 +1,19 @@
+#
+# idea:
+# have a
+# /proj-git
+# /proj-live
+# and in public_html create a symlink to the live folder
+# ln -s ~/src/homepage/docs-live ~/public_html/docs
+#
+# this script copies all required files over to the git-live folder
+#
+
 import os
 import shutil
 import os.path as p
 import errno
+
 
 srcfiles = [
   '_lib',
