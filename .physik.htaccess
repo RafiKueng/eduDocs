@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+
+  RewriteEngine on
+  RewriteBase /~rafik/docs/
+
+  # redirect ressources for pages
+  RewriteRule ^([A-Za-z0-9][\w\-]*)/(img|pdf|css|js)/(\w+\.\w+)$ _pages/$1/$2/$3 [NC,L]
+
+  # redirect page/article requests
+  RewriteRule ^([A-Za-z0-9][\w\-]*)$ $1/ [R,L,QSA]  # forgott trailling / ? -> redirect 
+  RewriteRule ^([A-Za-z0-9][\w\-]*)/?(([\w\-]+/?)*)$ index.php?a=$1&c=$2 [NC,L,QSA]
+
+</IfModule>

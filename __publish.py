@@ -18,7 +18,8 @@ srcfiles = [
 
 #host specific files
 hostfiles = [
-  ('config','.php'),
+  ('config','php'),
+  ('','htaccess'),
 ]
 
 host = 'physik'
@@ -36,7 +37,7 @@ for f in srcfiles:
     
 for (n, ext) in hostfiles:
   try:
-    print 'copying:', (p.join(srcpath,n+'.'+host+ext),p.join(dest,n+ext))
-    shutil.copy(p.join(srcpath,n+'.'+host+ext),p.join(dest,n+ext))
+    print 'copying:', (p.join(srcpath,n+'.'+host+'.'+ext),p.join(dest,n+'.'+ext))
+    shutil.copy(p.join(srcpath,n+'.'+host+'.'+ext),p.join(dest,n+'.'+ext))
   except OSError as e:
     raise e
