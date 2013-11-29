@@ -11,18 +11,23 @@
   function render_page($f) {
     global $config;
   
-    $fn = realpath(PAGES_PATH . '/' . $f . '/' . $config["pagefile"]);
+    #$fn = realpath(PAGES_PATH . '/' . $f . '/' . $config["pagefile"]);
     #echo $fn;
     #echo PAGES_PATH . $f . '/' . $config["pagefile"];
-    $file = file($fn);
-    foreach($file as $line){
-      
-    }
+    #$file = file($fn);
+    #foreach($file as $line){}
     #print_r($file);
     
+    require_once(PAGES_PATH . '/' . $f . '/' . $config["pagedata"]);
+    
     require_once(TEMPL_PATH . "header.php");
-    #echo 'blabla';
-    #print_r($file);
+    
+    if (isset($data["title"])){echo "<h1>".$data["title"]."</h1>";}
+    echo '<div class="about">';
+    if (isset($data["author"])){echo ' Author: '.$data["author"];}
+    if (isset($data["date"])){echo ' Date: '.$data["date"];}
+    echo '</div>';
+    
     require_once(PAGES_PATH . '/' . $f . '/' . $config["pagefile"]);
     require_once(TEMPL_PATH . "footer.php");
 

@@ -1,6 +1,3 @@
-
-<h1>Setup and Usage of Git, Github and Latex</h1>
-
 <p>
   This tutorial explains how to set up and use git and github to contribute to a scientific paper.
   We can even write some formulas like \(a^2+b^2=c^2\) using latex style.

@@ -16,11 +16,17 @@ function get_list_of_articles(){
     if ($file != '.' and $file != '..' and is_dir($path.$file)){
       #echo 'blablabla';
       #$ctime = filectime($path . $file); // . ',' . $file;
-      
       $list[$file] = array(
         "name" => $file,
         "title" => " BLA".$file        
       );
+
+      # get metadata
+      if(is_file($path.$file.'/'.$config['pagedata'])){
+        include $path.$file.'/'.$config['pagedata'];
+        $list[$file]['data'] = $data;
+      }
+
     }
   }
   closedir($dir);

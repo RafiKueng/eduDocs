@@ -83,11 +83,21 @@
 if (isset($list)){
   foreach ($list as $entry) {
     $name = $entry["name"];
-    echo "              <li><a href='./$name/'>$name</a></li>";
+    if (isset($entry["data"])){
+      $_d=TRUE;
+      $d = $entry["data"];
+    }
+    else {$_d=FALSE;}
+    
+    echo "              <li>";
+    echo "<a href='./$name/'>";
+    echo ( ($_d and isset($d["title"])) ? $d["title"] : $name); 
+    echo "</a>";
+    echo ( ($_d and isset($d["author"])) ? "<br>by: ".$d["author"] : "");
+    echo "</li>";
   }
 }
 ?>
-                <li>empty line</li>
             </ul>
         </div>
     </body>

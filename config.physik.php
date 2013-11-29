@@ -2,7 +2,7 @@
   
 $config = array(
   "pagefile"  => "html.php",
-  "pageconf" => "conf.php",
+  "pagedata" => "data.php",
   "pagecss" => "css.php"
 );
 
